@@ -1,0 +1,26 @@
+{
+    "id": "6FAF7E3B",
+    "path": "~/Documents/global_validation_points/app.R",
+    "project_path": "app.R",
+    "type": "r_source",
+    "hash": "2798494252",
+    "contents": "",
+    "dirty": false,
+    "created": 1697558337639.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "50,24",
+        "scrollLine": "28"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1697618396,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1697618396771,
+    "read_only": false,
+    "read_only_alternatives": []
+}
