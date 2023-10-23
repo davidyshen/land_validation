@@ -7,6 +7,13 @@ library(stringi)
 
 current_filename <- NULL
 
+# Set working directory to be non-temporary
+# Make folder if it doesn't already exist
+if (!dir.exists("~/landcover_validation_shiny/")) {
+  dir.create("~/landcover_validation_shiny/")
+}
+setwd("~/landcover_validatio_shiny/")
+
 land <- vect("land_simp_no_ant.geojson")
 
 # User Interface
