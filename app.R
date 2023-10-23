@@ -1,3 +1,9 @@
+# Install packages if not already installed
+if (!require("shiny")) install.packages("shiny")
+if (!require("leaflet")) install.packages("leaflet")
+if (!require("sf")) install.packages("sf")
+if (!require("terra")) install.packages("terra")
+
 # Required Libraries
 library(shiny)
 library(leaflet)
