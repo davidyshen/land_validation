@@ -36,8 +36,8 @@ ui <- fluidPage(
       "Previous point filename:",
       verbatimTextOutput("previous_filename"),
       p("Every point that has been classified will be saved and compiled into the land cover validation dataset."),
-      p("The points are saved in the 'points' directory here:"),
-      verbatimTextOutput("wd")
+      p("The points are saved here:"),
+      verbatimTextOutput("save_loc")
     ),
     mainPanel(
       leafletOutput("map", height = 600),
@@ -65,12 +65,12 @@ ui <- fluidPage(
 
 # Server function
 server <- function(input, output) {
-  wd <- output$wd <- renderText(getwd())
+  output$save_loc <- renderText(dir)
 
   pt <- reactiveValues(data = NULL)
 
   generate_filename <- function() {
-    paste0(dir, "points/point_", stringi::stri_rand_strings(1, 15), ".geojson")
+    paste0(dir, "point_", stringi::stri_rand_strings(1, 15), ".geojson")
   }
 
   generate_point <- function() {
