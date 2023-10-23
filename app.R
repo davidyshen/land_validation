@@ -65,7 +65,7 @@ ui <- fluidPage(
 
 # Server function
 server <- function(input, output) {
-  output$save_loc <- renderText(dir)
+  output$save_loc <- renderText(normalizePath(dir))
 
   pt <- reactiveValues(data = NULL)
 
