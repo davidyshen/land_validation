@@ -27,8 +27,8 @@ ui <- fluidPage(
       "Point filename:",
       verbatimTextOutput("current_filename"),
       p(),
-      "Previous point filename:",
-      verbatimTextOutput("previous_filename"),
+      # "Previous point filename:",
+      # verbatimTextOutput("previous_filename"),
       p("Every point that has been classified will be saved and compiled into the land cover validation dataset.")
     ),
     mainPanel(
@@ -47,10 +47,10 @@ ui <- fluidPage(
       actionButton("built_up", "Built-Up"),
       actionButton("crops_not_trees", "Crops Not Trees"),
       actionButton("crops_trees", "Crops Trees"),
-      p(),
-      p("Made a mistake?"),
-      # Delete the previous point
-      actionButton("undo", "Undo last point")
+      # p(),
+      # p("Made a mistake?"),
+      # # Delete the previous point
+      # actionButton("undo", "Undo last point")
     )
   )
 )
@@ -162,11 +162,11 @@ server <- function(input, output) {
     generate_point()
   })
 
-  observeEvent(input$undo, {
-    # Delete the previous point
-    file.remove(previous_filename)
-    generate_point()
-  })
+  # observeEvent(input$undo, {
+  #   # Delete the previous point
+  #   file.remove(previous_filename)
+  #   generate_point()
+  # })
 
   output$ptText <- renderPrint({
     pt$data
