@@ -7,12 +7,11 @@ library(stringi)
 
 current_filename <- NULL
 
-# Set working directory to be non-temporary
-# Make folder if it doesn't already exist
+# Make folder if it doesn't already exist for storing points
 if (!dir.exists("~/landcover_validation_shiny/")) {
   dir.create("~/landcover_validation_shiny/")
 }
-setwd("~/landcover_validatio_shiny/")
+dir <- "~/landcover_validation_shiny/"
 
 land <- vect("land_simp_no_ant.geojson")
 
@@ -71,7 +70,7 @@ server <- function(input, output) {
   pt <- reactiveValues(data = NULL)
 
   generate_filename <- function() {
-    paste0("points/point_", stringi::stri_rand_strings(1, 15), ".geojson")
+    paste0(dir, "points/point_", stringi::stri_rand_strings(1, 15), ".geojson")
   }
 
   generate_point <- function() {
