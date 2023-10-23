@@ -14,10 +14,10 @@ library(stringi)
 current_filename <- NULL
 
 # Make folder if it doesn't already exist for storing points
-if (!dir.exists("~/landcover_validation_shiny/")) {
-  dir.create("~/landcover_validation_shiny/")
+if (!dir.exists("~/landcover_validation_points/")) {
+  dir.create("~/landcover_validation_points/")
 }
-dir <- "~/landcover_validation_shiny/"
+dir <- "~/landcover_validation_points/"
 
 land <- vect("land_simp_no_ant.geojson")
 
